@@ -33,12 +33,21 @@ class ModelCfg:
     description: str
 
 MODELS = {
-    "pro":  ModelCfg("gemini-2.5-flash-preview-05-20", 120,
-                     "Depth‑first analysis; best reasoning"),
-    "flash": ModelCfg("gemini-2.0-flash", 60,
-                      "Latest stable flash model"),
-    "flash-lite": ModelCfg("gemini-2.0-flash-lite", 30,
-                           "Cost-efficient, low latency"),
+    # Latest stable models (November 2025)
+    "pro": ModelCfg("gemini-2.5-pro", 120,
+                    "Most powerful model with adaptive thinking; best for coding & agentic tasks"),
+    "flash": ModelCfg("gemini-2.5-flash", 60,
+                      "Stable 2.5 Flash; optimal for large-scale processing & agentic use"),
+    "flash-lite": ModelCfg("gemini-2.5-flash-lite", 30,
+                           "Fast, low-cost model with optional thinking budget"),
+    # Latest preview models (September 2025) - 50% reduction in output tokens
+    "flash-preview": ModelCfg("gemini-2.5-flash-preview-09-2025", 60,
+                              "Preview Flash with 54% SWE-Bench; improved agentic tool use"),
+    "flash-lite-preview": ModelCfg("gemini-2.5-flash-lite-preview-09-2025", 30,
+                                   "Preview Flash-Lite; 50% token reduction, faster"),
+    # Native audio model for voice workflows
+    "audio": ModelCfg("gemini-2.5-flash-native-audio-preview-09-2025", 30,
+                      "Native audio model for Live API with improved function calling"),
 }
 
 @dataclass

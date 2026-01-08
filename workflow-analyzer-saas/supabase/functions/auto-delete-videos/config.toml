@@ -1,0 +1,7 @@
+[function]
+name = "auto-delete-videos"
+verify_jwt = false
+
+[function.schedule]
+cron = "0 */6 * * *"  # Run every 6 hours
+description = "Delete videos older than 24 hours"

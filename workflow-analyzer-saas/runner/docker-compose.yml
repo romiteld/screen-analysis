@@ -1,0 +1,72 @@
+version: '3.8'
+
+services:
+  video-runner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: video-analysis-runner
+    environment:
+      # Supabase configuration
+      - SUPABASE_URL=${SUPABASE_URL}
+      - SUPABASE_SERVICE_ROLE_KEY=${SUPABASE_SERVICE_ROLE_KEY}
+      
+      # Google API configuration
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      
+      # Service configuration
+      - POLL_INTERVAL=10
+      - WORKER_ID=local-worker-01
+      
+      # Logging
+      - LOG_LEVEL=INFO
+    
+    volumes:
+      # Mount the video analysis script
+      - ../better_video_analysis_fixed.py:/app/better_video_analysis_fixed.py:ro
+      
+      # Optional: Mount for local development
+      # - ./runner_service.py:/app/runner_service.py:ro
+    
+    restart: unless-stopped
+    
+    # Resource limits
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 4G
+        reservations:
+          cpus: '1'
+          memory: 2G
+    
+    # Health check
+    healthcheck:
+      test: ["CMD", "python", "-c", "import sys; sys.exit(0)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    
+    # Logging configuration
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+# Optional: Add a local database for testing
+  # postgres:
+  #   image: postgres:15-alpine
+  #   container_name: video-analysis-db
+  #   environment:
+  #     - POSTGRES_USER=postgres
+  #     - POSTGRES_PASSWORD=postgres
+  #     - POSTGRES_DB=video_analysis
+  #   ports:
+  #     - "5432:5432"
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+
+# volumes:
+#   postgres_data:

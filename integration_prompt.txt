@@ -1,3 +1,0 @@
-Identify every moment data moves between two different tools (e.g., Zoho → Excel, JustCall → Zoho, Outlook → Teams).  
-For each interaction answer: WHY the user moves, HOW (manual copy, export), and WHAT EVA could automate (API call, webhook, RPA).  
-Return a two‑column table (Source ↔ Target | Automation Proposal).

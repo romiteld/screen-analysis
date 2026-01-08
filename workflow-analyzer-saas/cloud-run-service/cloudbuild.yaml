@@ -1,0 +1,42 @@
+steps:
+  # Build the container image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/workflow-analyzer-runner:$COMMIT_SHA', '.']
+  
+  # Push the container image to Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/workflow-analyzer-runner:$COMMIT_SHA']
+  
+  # Deploy container image to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'workflow-analyzer-runner'
+      - '--image'
+      - 'gcr.io/$PROJECT_ID/workflow-analyzer-runner:$COMMIT_SHA'
+      - '--region'
+      - 'us-central1'
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'
+      - '--memory'
+      - '2Gi'
+      - '--cpu'
+      - '2'
+      - '--timeout'
+      - '900'
+      - '--concurrency'
+      - '10'
+      - '--set-env-vars'
+      - 'SUPABASE_URL=${_SUPABASE_URL},SUPABASE_SERVICE_ROLE_KEY=${_SUPABASE_SERVICE_ROLE_KEY},GOOGLE_GEMINI_API_KEY=${_GOOGLE_GEMINI_API_KEY},GCS_BUCKET_NAME=${_GCS_BUCKET_NAME}'
+
+images:
+  - 'gcr.io/$PROJECT_ID/workflow-analyzer-runner:$COMMIT_SHA'
+
+substitutions:
+  _SUPABASE_URL: 'YOUR_SUPABASE_URL'
+  _SUPABASE_SERVICE_ROLE_KEY: 'YOUR_SUPABASE_SERVICE_ROLE_KEY'
+  _GOOGLE_GEMINI_API_KEY: 'YOUR_GEMINI_API_KEY'
+  _GCS_BUCKET_NAME: 'workflow-analyzer-videos'

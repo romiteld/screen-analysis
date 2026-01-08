@@ -1,7 +1,0 @@
-Focus ONLY on Outlook activity:
-
-* How are emails triaged (folders, flags, categories)?  
-* Detect any templates or copy‑paste patterns.  
-* Estimate average handling time per email.  
-* Suggest EVA features (auto‑draft, sentiment triage, follow‑up scheduler).
-Return markdown bullets.

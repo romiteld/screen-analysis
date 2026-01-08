@@ -173,7 +173,7 @@ export function LoomImporter({ onImportComplete, onError }: LoomImporterProps) {
                     </p>
                     {videoMetadata?.title && (
                       <p className="text-xs text-green-700 mt-1">
-                        "{videoMetadata.title}"
+                        &quot;{videoMetadata.title}&quot;
                       </p>
                     )}
                   </div>
@@ -192,12 +192,12 @@ export function LoomImporter({ onImportComplete, onError }: LoomImporterProps) {
                     How to Download Your Loom Video
                   </h4>
                   <ol className="text-sm text-blue-800 space-y-2 list-decimal list-inside">
-                    <li>Click "Open in Loom" above to open your video</li>
+                    <li>Click &quot;Open in Loom&quot; above to open your video</li>
                     <li>Sign in to Loom if prompted</li>
-                    <li>Click the "Share" button below the video</li>
-                    <li>Click "Download" in the sharing options</li>
-                    <li>Choose "MP4" format and click "Download"</li>
-                    <li>Once downloaded, use the "Upload File" option to upload the video</li>
+                    <li>Click the &quot;Share&quot; button below the video</li>
+                    <li>Click &quot;Download&quot; in the sharing options</li>
+                    <li>Choose &quot;MP4&quot; format and click &quot;Download&quot;</li>
+                    <li>Once downloaded, use the &quot;Upload File&quot; option to upload the video</li>
                   </ol>
                 </div>
               )}
@@ -229,7 +229,7 @@ export function LoomImporter({ onImportComplete, onError }: LoomImporterProps) {
             <li>The video must have download permissions enabled in Loom</li>
             <li>You must be signed into Loom to download videos</li>
             <li>Videos over 20GB cannot be downloaded from Loom</li>
-            <li>Make sure the video privacy is set to "Anyone with the link can view"</li>
+            <li>Make sure the video privacy is set to &quot;Anyone with the link can view&quot;</li>
           </ul>
         </div>
       </div>

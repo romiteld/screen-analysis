@@ -25,6 +25,7 @@ export default function PaymentSuccessPage() {
     }
 
     checkPaymentAndRedirect()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sessionId])
 
   const checkPaymentAndRedirect = async () => {
@@ -148,7 +149,7 @@ export default function PaymentSuccessPage() {
             </motion.div>
 
             <h1 className="text-2xl font-display font-bold text-foreground mb-2">
-              You're All Set!
+              You&apos;re All Set!
             </h1>
             <p className="text-muted-foreground mb-6">
               Redirecting you to upload your video...

@@ -258,6 +258,7 @@ const PDFReport: React.FC<PDFReportProps> = ({
         {/* Header */}
         <View style={styles.header}>
           {logoUrl ? (
+            /* eslint-disable-next-line jsx-a11y/alt-text */
             <Image style={styles.logo} src={logoUrl} />
           ) : (
             <Logo companyName={companyName} />

@@ -225,6 +225,7 @@ export default function DashboardPage() {
 
   useEffect(() => {
     checkAuth()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const checkAuth = async () => {
@@ -299,7 +300,7 @@ export default function DashboardPage() {
             Welcome back, <span className="gradient-text">{displayName}</span>
           </h1>
           <p className="text-muted-foreground">
-            Here's an overview of your workflow analyses
+            Here&apos;s an overview of your workflow analyses
           </p>
         </motion.div>
       </div>

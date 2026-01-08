@@ -226,7 +226,7 @@ export default function Testimonials() {
 
                   {/* Content */}
                   <p className="text-muted-foreground mb-6 leading-relaxed line-clamp-4">
-                    "{testimonial.content}"
+                    &quot;{testimonial.content}&quot;
                   </p>
 
                   {/* Author */}

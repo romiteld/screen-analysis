@@ -219,7 +219,7 @@ export default function Pricing() {
               {/* Features */}
               <div className="mb-10">
                 <h4 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
-                  What's Included
+                  What&apos;s Included
                 </h4>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {features.map((feature, index) => (

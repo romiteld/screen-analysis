@@ -257,7 +257,7 @@ export default function NewAnalysisPage() {
                 </div>
 
                 <p className="text-muted-foreground mb-6">
-                  You'll be redirected to our secure payment page. After payment, your video will be automatically analyzed by our AI.
+                  You&apos;ll be redirected to our secure payment page. After payment, your video will be automatically analyzed by our AI.
                 </p>
 
                 {/* Error Message */}
@@ -355,7 +355,7 @@ export default function NewAnalysisPage() {
             className="bg-card rounded-2xl border border-border p-6"
           >
             <h3 className="font-display font-semibold text-foreground mb-4">
-              What's Included
+              What&apos;s Included
             </h3>
             <ul className="space-y-3">
               {[

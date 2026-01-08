@@ -157,6 +157,7 @@ export default function AnalysisPage() {
     if (uploadId) {
       loadAnalysisData()
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [uploadId])
 
   const loadAnalysisData = async () => {

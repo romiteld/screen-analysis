@@ -50,6 +50,7 @@ export default function UploadPage() {
     }
 
     loadUpload()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [uploadId])
 
   const loadUpload = async () => {
@@ -389,7 +390,7 @@ export default function UploadPage() {
                               Manual Download Required
                             </h4>
                             <p className="text-sm text-muted-foreground mb-3">
-                              Due to Loom's security restrictions, you'll need to download the video manually.
+                              Due to Loom&apos;s security restrictions, you&apos;ll need to download the video manually.
                             </p>
                             <ol className="text-sm text-muted-foreground space-y-2 mb-4">
                               <li className="flex items-center gap-2">
@@ -406,7 +407,7 @@ export default function UploadPage() {
                               </li>
                               <li className="flex items-center gap-2">
                                 <span className="w-5 h-5 rounded-full bg-muted flex items-center justify-center text-xs font-medium">2</span>
-                                Click "Download" in Loom
+                                Click &quot;Download&quot; in Loom
                               </li>
                               <li className="flex items-center gap-2">
                                 <span className="w-5 h-5 rounded-full bg-muted flex items-center justify-center text-xs font-medium">3</span>
@@ -533,7 +534,7 @@ export default function UploadPage() {
 
               <div className="mt-8 pt-8 border-t border-border">
                 <p className="text-sm text-muted-foreground mb-4">
-                  We'll send you an email when your analysis is ready. This typically takes 5-15 minutes.
+                  We&apos;ll send you an email when your analysis is ready. This typically takes 5-15 minutes.
                 </p>
 
                 <button
